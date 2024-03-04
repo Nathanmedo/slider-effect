@@ -1,0 +1,314 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #222;
+}
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 60%;
+    padding-inline-start: 20px;
+    position: relative;
+    z-index: 100;
+}
+header nav a{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 13px;
+}
+.carousel{
+    position: relative;
+    margin-top: -50px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel .list .item{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel .list .item .contents{
+    position: absolute;
+    top: 35%;
+    box-sizing: border-box;
+    width: 80%;
+    padding-right: 25%;
+    margin-left: 20px;
+    transform: translateY(-50%);
+}
+.contents{
+    color: white;
+}
+.contents h4{
+    letter-spacing: 2px;
+}
+.contents h1{
+    color: orangered;
+}
+.contents div{
+    font-size: 13px;
+}
+.contents .buttons{
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+}
+.contents .buttons button{
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 120px;
+    height: 40px;
+}
+.contents .buttons button:nth-child(1){
+    border: none;
+    color: black;
+    background-color: white;
+    transition-duration: .5s;
+}
+.contents .buttons button:nth-child(1):hover{
+    background-color: black;
+    color: white;
+}
+.contents .buttons button:nth-child(2){
+    background: none;
+    border: 2px white solid;
+    color: white;
+    transition-duration: .5s;
+}
+.contents .buttons button:nth-child(2):hover{
+    background-color: white;
+    color: black;
+}
+.carousel .thumbnails{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    display: flex;
+    gap: 14px;
+    z-index: 1000;
+}
+.carousel .thumbnails .thumbnail-item{
+    width: 150px;
+    height: 220px;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    /* margin-right: 14px; */
+}
+.carousel .thumbnails .thumbnail-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+}
+.thumbnails .thumbnail-item .thumb-contents{
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    left: 10px;
+    right: 10px;
+    transform: scale(1);
+}
+.thumb-contents h5{
+    margin: 0;
+    font-weight: light;
+}
+.arrows{
+    position: absolute;
+    bottom: 10%;
+    left: 24%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    
+    gap: 15px;
+    z-index: 800;
+    /* font-family: monospace; */
+}
+.arrows .prev, .next{
+    font-family: monospace;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .5s;
+    cursor: pointer;
+    
+}
+.arrows .prev:hover, .next:hover{
+    background-color: rgba(128, 128, 128, .5);
+}
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+.carousel .list .item:nth-child(1) .contents .title,
+.carousel .list .item:nth-child(1) .contents .sub-title,
+.carousel .list .item:nth-child(1) .contents .notes,
+.carousel .list .item:nth-child(1) .contents .buttons
+{
+    transform: translateY(50px);
+    opacity: 0;
+    filter: blur(16px);
+    animation: showContent .5s linear 1 forwards;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+.carousel .list .item:nth-child(1) .contents .title{
+    animation-delay: 1s;
+}
+.carousel .list .item:nth-child(1) .contents .sub-title{
+    animation-delay: 1.2s;
+}
+.carousel .list .item:nth-child(1) .contents .notes{
+    animation-delay: 1.6s;
+}
+.carousel .list .item:nth-child(1) .contents .buttons{
+    animation-delay: 1.8s;
+}
+
+/* .carousel.next-page  */
+.carousel.next-page .list .item:nth-child(1) img{
+    left: 50%;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 14px;
+    bottom: 50px;
+    height: 220px;
+    width: 150px;
+    animation: nextPage .8s linear forwards;
+}
+@keyframes nextPage {
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        border-radius: 0;
+        bottom: 0;
+    }
+}
+.carousel .thumbnails{
+    transform: translateX(50px);
+    animation: nextThumbnail .8s linear 1 forwards;
+}
+
+@keyframes nextThumbnail {
+    to{
+        transform: translateX(0);
+    }
+}
+.carousel.next-page .thumbnails .thumbnail-item:nth-last-child(1){
+    width: 0;
+    overflow: hidden;
+    height: 0;
+    animation: showNextThumbnail .8s linear 1 forwards;
+}
+.carousel.prev-page .thumbnails .thumbnail-item:nth-child(1){
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    animation: showNextThumbnail .8s linear 1 forwards;
+}
+@keyframes showNextThumbnail {
+    to{
+        width: 150px;
+        opacity: 1;
+        height: 220px;
+    }
+}
+.carousel.prev-page .thumbnails .thumbnail-item:nth-child(1){
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    animation: showNextThumbnail .8s linear 1 forwards;
+}
+.carousel.prev-page .list .item:nth-child(2) {
+    z-index: 10;
+    
+}
+.carousel.prev-page .list .item:nth-child(2) img{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    animation: prevPage .8s linear forwards;
+}
+@keyframes prevPage {
+    to{
+        left: 50%;
+        overflow: hidden;
+        border-radius: 14px;
+        bottom: 50px;
+        height: 220px;
+        width: 150px;
+    }
+}
+.carousel.prev-page .list .item:nth-child(2) .contents .title,
+.carousel.prev-page .list .item:nth-child(2) .contents .sub-title,
+.carousel.prev-page .list .item:nth-child(2) .contents .notes,
+.carousel.prev-page .list .item:nth-child(2) .contents .buttons{
+    animation: animateContentout 1s linear 1 forwards;
+}
+@keyframes animateContentout {
+    to{
+        transform: translateY(-150px);
+        opacity: 0;
+        filter: blur(16px);
+    }
+}
+.carousel .countdown{
+    
+    height: 3px;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(to right, yellow, pink, orangered);
+    box-shadow: 0 0 14px linear-gradient(to right, yellow, pink, orangered),
+     0 0 20px linear-gradient(to right, yellow, pink, orangered);
+    z-index: 2000;
+}
+.carousel.next-page .countdown,
+.carousel.prev-page .countdown{
+    width: 100%;
+    animation: countdowntime 1s linear 1 forwards;
+}
+@keyframes countdowntime {
+    to{
+        
+        width: 0%;
+    }
+}
+@media screen and (max-width: 700px){
+    .carousel .thumbnails{
+        
+        gap: 10px;
+    }
+    .item .contents h1{
+        font-size: 20px;
+    }
+}

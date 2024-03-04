@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html css and js slide effect with carousel</title>
+    <link rel="stylesheet" href="slide-style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contacts</a>
+        </nav>
+    </header>
+    <div class="carousel">
+        <div class="list">
+            <div class="item">
+                <img src="image-1.jpg">
+                <div class="contents">
+                    <h4 class="title">The World</h4>
+                    <h1 class="sub-title">ALL AROUND THE GLOBE</h1>
+                    <div class="notes">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, labore dolores veritatis corrupti nesciunt, reprehenderit non quo sapiente enim quia laboriosam ab voluptas? Odit culpa accusamus eos recusandae ex similique?</div>
+                    <div class="buttons">
+                        <button>Learn more</button>
+                        <button>Order now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image-2.jpg">
+                <div class="contents">
+                    <h4 class="title">The World</h4>
+                    <h1 class="sub-title">ALL AROUND THE GLOBE</h1>
+                    <div class="notes">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, labore dolores veritatis corrupti nesciunt, reprehenderit non quo sapiente enim quia laboriosam ab voluptas? Odit culpa accusamus eos recusandae ex similique?</div>
+                    <div class="buttons">
+                        <button>Learn more</button>
+                        <button>Order now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image-3.jpg">
+                <div class="contents">
+                    <h4 class="title">The World</h4>
+                    <h1 class="sub-title">ALL AROUND THE GLOBE</h1>
+                    <div class="notes">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, labore dolores veritatis corrupti nesciunt, reprehenderit non quo sapiente enim quia laboriosam ab voluptas? Odit culpa accusamus eos recusandae ex similique?</div>
+                    <div class="buttons">
+                        <button>Learn more</button>
+                        <button>Order now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image-4.jpg">
+                <div class="contents">
+                    <h4 class="title">The World</h4>
+                    <h1 class="sub-title">ALL AROUND THE GLOBE</h1>
+                    <div class="notes">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, labore dolores veritatis corrupti nesciunt, reprehenderit non quo sapiente enim quia laboriosam ab voluptas? Odit culpa accusamus eos recusandae ex similique?</div>
+                    <div class="buttons">
+                        <button>Learn more</button>
+                        <button>Order now</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="thumbnails">
+            <div class="thumbnail-item">
+                <img src="image-1.jpg" alt="">
+                <div class="thumb-contents">
+                    <h4>The World</h4>
+                    <h5>All around the globe</h5>
+                </div>
+            </div>
+            <div class="thumbnail-item">
+                <img src="image-2.jpg" alt="">
+                <div class="thumb-contents">
+                    <h4>The World</h4>
+                    <h5>All around the globe</h5>
+                </div>
+            </div>
+            <div class="thumbnail-item">
+                <img src="image-3.jpg" alt="">
+                <div class="thumb-contents">
+                    <h4>The World</h4>
+                    <h5>All around the globe</h5>
+                </div>
+            </div>
+            <div class="thumbnail-item">
+                <img src="image-4.jpg" alt="">
+                <div class="thumb-contents">
+                    <h4>The World</h4>
+                    <h5>All around the globe</h5>
+                </div>
+            </div>
+            
+        </div>
+        <div class="arrows">
+            <div class="prev" onclick="sliderDirection('prev-page'), stopAutorun()" id="prev"><</div>
+            <div class="next" onclick="sliderDirection('next-page'), stopAutorun()"  id="next">></div>
+        </div>
+        <div class="countdown"></div>
+    </div>
+    <script src="slide-action.js"></script>
+</body>
+</html>
